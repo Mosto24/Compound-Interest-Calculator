@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <section class="main">
+        <form>
+            <div class="startSum">
+                <h4>Начальная сумма</h4>
+                <input type="text" value="">
+            </div>
+            <div class="time">
+                <h4>Период</h4>
+                <input type="text">
+            </div>
+            <div class="stavka">
+                <h4>Ставка</h4>
+                <input type="text">
+            </div>
+            <div>
+                <h4>Период реинвестирования</h4>
+                <select id="reinvest">
+                    <option value="0">Не реинвестировать</option>
+                    <option value="1">Раз в месяц</option>
+                    <option value="3">Раз в 3 месяца</option>
+                    <option value="6">Раз в полгода</option>
+                    <option value="12">Раз в год</option>
+                </select>
+            </div>
+            <h4>Доп. вложения</h4>
+            <div class="addMoney">
+                <input type="text">
+                <div>
+                    <select id="adding">
+                        <option value="1">Раз в месяц</option>
+                        <option value="3">Раз в 3 месяца</option>
+                        <option value="6">Раз в полгода</option>
+                        <option value="12">Раз в год</option>
+                    </select>
+                </div>
+            </div>
+            <button>Рассчитать</button>
+        </form>
+        <div class="result"></div>
+    </section>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
