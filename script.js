@@ -1,17 +1,3 @@
-$("button").click((e) => {
-    e.preventDefault();
-    let startSum = Number($(".startSum").find("input").val());
-    let time = Number($(".time").find("input").val())*12;
-    let stavka = Number($(".stavka").find("input").val());
-    let period = Number($("#reinvest").val());
-    let addingMoney =  Number($(".addMoney").find("input").val());
-    let addMoneyPeriod = 1;
-    if (addingMoney !== 0) {
-        addMoneyPeriod = Number($("#adding").val());
-    }
-    $(".result").text("Итоговая сумма: " + calc(startSum, time, stavka, period, addingMoney, addMoneyPeriod));
-});
-
 const baseVariant = (sum, time, stavka) => {
     let result = sum + sum*stavka*time;
     return result;
@@ -41,3 +27,17 @@ const calc = (startSum, time, stavka, period, addingMoney, addMoneyPeriod) => {
     }
     return result.toFixed(2);
 }
+
+$("button").click((e) => {
+    e.preventDefault();
+    let startSum = Number($(".startSum").find("input").val());
+    let time = Number($(".time").find("input").val())*12;
+    let stavka = Number($(".stavka").find("input").val());
+    let period = Number($("#reinvest").val());
+    let addingMoney =  Number($(".addMoney").find("input").val());
+    let addMoneyPeriod = 1;
+    if (addingMoney !== 0) {
+        addMoneyPeriod = Number($("#adding").val());
+    }
+    $(".result").text("Итоговая сумма: " + calc(startSum, time, stavka, period, addingMoney, addMoneyPeriod));
+});
