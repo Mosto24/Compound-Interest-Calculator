@@ -5,7 +5,7 @@ body {
 
 .main {
   margin: 0 auto;
-  width: 500px;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,6 +23,7 @@ form {
 
 h4 {
   margin-left: 10px;
+  margin-right: 50px;
 }
 
 input {
@@ -35,12 +36,8 @@ select {
 
 .addMoney {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: start;
-}
-
-#adding {
-  margin-left: 20px;
 }
 
 button {
@@ -52,4 +49,33 @@ button {
 .result {
   margin-top: 25px;
   font-size: 25px;
+}
+
+input, select {
+  width: 90%;
+  margin-right: 15px;
+}
+
+.startSum {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.time {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.stavka {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.reinvesting {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
 }/*# sourceMappingURL=style.css.map */

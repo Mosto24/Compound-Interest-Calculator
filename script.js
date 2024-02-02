@@ -4,27 +4,23 @@ const baseVariant = (sum, time, stavka) => {
 }
 
 const calc = (startSum, time, stavka, period, addingMoney, addMoneyPeriod) => {
-    let oneMonthSatvka = stavka/100/12;
-    let result = startSum;
-    if (period == 0) {
-        let income = 0;
-        let addMoneyPeriodCopy = addMoneyPeriod;
-        for (let i = 0; i < time; i++) {
-            addMoneyPeriodCopy -= 1;
-            if (addMoneyPeriodCopy == 0) {
-                addMoneyPeriodCopy = addMoneyPeriod;
-                result += addingMoney;
-            }
-            income += baseVariant(result, 1, oneMonthSatvka) - result;
-            console.log(i);
+    let result = 0;
+    if(period != 0) {
+        result = startSum*(Math.pow((1+stavka/100/period), (period*time/12)));
+    } else {
+        result = startSum*(1+stavka/100*time/12);
+    }
+    let income = 0;
+    let newTime = time;
+    for (let i = 0; i < time; i += addMoneyPeriod) {
+        newTime -= addMoneyPeriod;
+        if (period != 0) {
+            income += addingMoney*(Math.pow((1+stavka/100/period), (period*(newTime)/12)));
+        } else {
+            income += addingMoney*(1+stavka/100*newTime/12);
         }
-        console.log(result);
-        result += income;
-        return result.toFixed(2);
     }
-    for (let i = 0; i < time; i += period) {
-        result = baseVariant(result, period, oneMonthSatvka) + (addingMoney / addMoneyPeriod * period);
-    }
+    result = result + income;
     return result.toFixed(2);
 }
 
