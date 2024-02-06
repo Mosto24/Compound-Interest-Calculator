@@ -1,8 +1,3 @@
-const baseVariant = (sum, time, stavka) => {
-    let result = sum + sum*stavka*time;
-    return result;
-}
-
 const calc = (startSum, time, stavka, period, addingMoney, addMoneyPeriod) => {
     let result = 0;
     if(period != 0) {
